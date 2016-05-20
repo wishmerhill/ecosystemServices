@@ -7,6 +7,7 @@
 \usepackage{textcomp}
 \usepackage{url}
 \usepackage[hidelinks]{hyperref}
+\usepackage{pgfplots}
 \usepackage[big,binding=0cm]{layaureo}
 \author{Alberto Azzalini}
 \title{Valutazione dei servizi ecosistemici in ambiente alpino:\\ problemi e prospettive}
@@ -41,13 +42,17 @@
 	
 	Ecosistemi sani possono offrire un contributo significativo, proprio perché i loro servizi, gratuitamente utilizzati dall'uomo, che costituiscono risorse non sostituibili con quelle del capitale antropico, rappresentano un importante fattore economico, attualmente ignorato dall'economia tradizionale perché senza mercato, ma di importanza strategica in un'ottica di ecologia economica e di nuovi indicatori di integrazione del Pil (\url{www.stiglitz-sen-fitoussi.fr}, v. anche Ecoscienza 2/2010 \url{www.ecoscienza.eu}).
 	
-	L'economia ecologica individua un nuovo approccio per pesare le risorse di un territorio e per riequilibrare i sistemi economici. Dal capitale inteso in senso generico e tradizionale viene enucleato quello ``naturale'', che fornisce --naturalmente-- servizi mantenendo la stabilità ecologica dei sistemi, valorizzando i territori ricchi di SE e le attività economiche compatibili che ne concorrono a mantenere la funzionalità (ad esempio l'agricoltura biologica). 
+	L'economia ecologica individua un nuovo approccio per pesare le risorse di un territorio e per riequilibrare i sistemi economici. Dal capitale inteso in senso generico e tradizionale viene enucleato quello ``naturale'', che fornisce --naturalmente-- servizi mantenendo la stabilità ecologica dei sistemi, valorizzando i territori ricchi di SE e le attività economiche compatibili che ne concorrono a mantenere la funzionalità. 
 	
-	La valutazione ecologico-economica ha lo scopo di stimare i SE in termini monetari, al fine di fornire una metrica comune	attraverso cui i benefici di diversi servizi forniti dagli ecosistemi possano essere quantificati \cite{MEA_EcosystemsAndHumanWellBeing:Synthesis} per permettere di supportare strategie di sostenibilità e di perequazione territoriale, anche a fronte dei cambiamenti globali nel breve, medio e lungo periodo. È importante quindi valutare il valore economico totale (TEV) (\cite{freeman2014measurement}; \cite{merlo2005valuing}), delle risorse e dei servizi considerati anche come beni pubblici, tenendoli presenti nelle analisi costi-benefici e nelle valutazioni del danno ambientale, in cui il concetto di TEV costituisce il background metodologico delle valutazioni dei beni ambientali alla cui base c'è la distinzione tra due grandi categorie di benefici che una risorsa naturale offre: i valori d'uso e i valori di non-uso.  
+	La valutazione ecologico-economica ha lo scopo di stimare i SE in termini monetari, al fine di fornire una metrica comune	attraverso cui i benefici dei diversi servizi forniti dagli ecosistemi possano essere quantificati \cite{MEA_EcosystemsAndHumanWellBeing:Synthesis} per permettere di supportare strategie di sostenibilità e di perequazione territoriale, anche a fronte dei cambiamenti globali nel breve, medio e lungo periodo. 
 	
-%	Conoscere il valore economico totale delle risorse e dei beni ambientali è quindi importante per verificare la razionalità delle scelte di sviluppo, per dare un valore alle politiche di tutela dell'ambiente e individuare le regioni più fragili dove il cambiamento è più probabile. Occorre quindi innescare dei meccanismi di riconoscimento economico di questi servizi (Santolini, 2008) in modo che vengano pesati nel bilancio economico complessivo mediante un sistema metrico comune che  faciliti le analisi dal momento che ora esistono metodi discussi ma efficaci di valutazione economico-ambientale (Giupponi et al., 2009) come già sviluppato a vari livelli sia locale (Morri e Santolini, 2009, 2010) che nazionale (Cataldi et al., 2009; Scolozzi et al., 2010). 
+	È importante quindi valutare il valore economico totale (TEV) (\cite{freeman2014measurement}; \cite{merlo2005valuing}) delle risorse e dei servizi considerati anche come beni pubblici, tenendoli presenti nelle analisi costi-benefici e nelle valutazioni del danno ambientale. Il TEV costituisce il background metodologico delle valutazioni dei beni ambientali alla cui base c'è la distinzione tra le due grandi categorie di benefici che una risorsa naturale offre: i valori d'uso e i valori di non-uso.  
 	
-	Gli attuali strumenti di pianificazione, pur nelle significative differenze, partono da un'analisi dello status delle risorse ambientali, spesso trascurando i processi ecosistemici, le interazioni dinamiche e di controllo dei processi stessi, in particolare le loro relazioni con i fattori economici e sociali. Inoltre la pianificazione di tipo settoriale (es. agricoltura-Psr, infrastrutture-piano della mobilità, gestione delle acque-piano delle acque, etc.) non è nei fatti coordinata, anche in seguito a una suddivisione di responsabilità tra entità amministrative, per esempio tra i livelli regionali e quelli 	locali, anche se questo dovrebbe essere oggetto della pianificazione strategica. 
+	Conoscere il valore economico totale delle risorse e dei beni ambientali è quindi importante per verificare la razionalità delle scelte di sviluppo, per dare un valore alle politiche di tutela dell'ambiente e individuare le regioni più fragili dove il cambiamento è più probabile. 
+	
+%	Occorre quindi innescare dei meccanismi di riconoscimento economico di questi servizi (Santolini, 2008) in modo che vengano pesati nel bilancio economico complessivo mediante un sistema metrico comune che  faciliti le analisi dal momento che ora esistono metodi discussi ma efficaci di valutazione economico-ambientale (Giupponi et al., 2009) come già sviluppato a vari livelli sia locale (Morri e Santolini, 2009, 2010) che nazionale (Cataldi et al., 2009; Scolozzi et al., 2010). 
+	
+	Gli attuali strumenti di pianificazione, pur nelle significative differenze, partono da un'analisi dello status delle risorse ambientali, spesso trascurando i processi ecosistemici, le interazioni dinamiche e di controllo dei processi stessi, in particolare le loro relazioni con i fattori economici e sociali. 
 	
 	Il paradigma dei SE può costituire quindi la base per una revisione dei termini economici con cui considerare il territorio e i suoi capitali attraverso una  pianificazione territoriale più consapevole del significato dei processi ecologici e più orientata verso una sostenibilità concreta e durevole.
 	
@@ -58,7 +63,8 @@
 	
 	Negli ultimi cento anni, il clima globale e regionale ha subito cambiamenti drammatici, percepibili da ognuno di noi. In questo arco di tempo, la temperatura è aumentata in media di circa 0,8\,°C a livello globale mentre, nell'arco alpino settentrionale, negli ultimi 30 anni, si è accresciuta addirittura sino a 1,6\,°C. Per quanto riguarda gli effetti dei cambiamenti climatici, riveste un'importanza ancora più rilevante lo slittamento stagionale delle precipitazioni, con valori inferiori in estate e maggiori alla fine dell'inverno e in primavera.
 	
-	L'attuale dibattito si concentra spesso solamente sulle variazioni delle temperature. Tuttavia, l'andamento spazio-temporale delle precipitazioni ha conseguenze non meno rilevanti di quello delle temperature. Infatti le precipitazioni nell'ambiente alpino:	
+	L'attuale dibattito si concentra spesso solamente sulle variazioni delle temperature. Tuttavia, l'andamento spazio-temporale delle precipitazioni ha conseguenze non meno rilevanti di quello delle temperature. Infatti le precipitazioni nell'ambiente alpino:
+		
 	\begin{itemize}
 		\item sono responsabili dei maggiori danni osservati, provocati da alluvioni, siccità, valanghe, ecc.;
 		\item determinano la disponibilità d'acqua e quindi influiscono direttamente sull'agricoltura e l'economia forestale;
@@ -66,6 +72,34 @@
 		\item hanno influenza decisiva sullo sviluppo turistico delle aree, a causa dell'innevamento.
 	\end{itemize}
 	
+	\subsection{L'impatto del riscaldamento globale sui ghiacciai alpini}
+		Certamente uno degli effetti più evidenti del riscaldamento globale --e, come visto, delle variazioni del regime delle precipitazioni-- è, per quanto riguarda l'arco alpino, la riduzione e il ritiro dei ghiacciai.
+		
+		\begin{tikzpicture}
+		\begin{axis}[
+		title={Superficie dei ghiacci alpini dal 1850 ad oggi},
+		xlabel={Anno},
+		ylabel={Superficie [$km^2$]},
+		xmin=1850, xmax=2015,
+		ymin=2000, ymax=5000,
+		xtick={1850,1900,1920,1950,1980,1990,2005,2015},
+%		ytick={0,20,40,60,80,100,120},
+		legend pos=north west,
+		ymajorgrids=true,
+		grid style=dashed,
+		]
+		
+		\addplot[
+		color=blue,
+		mark=square,
+		]
+		coordinates {
+			(0,23.1)(10,27.5)(20,32)(30,37.8)(40,44.6)(60,61.8)(80,83.8)(100,114)
+		};
+
+		
+		\end{axis}
+		\end{tikzpicture}
 	
 	\subsection{Effetti secondari}
 		L'impatto dei cambiamenti climatici sui servizi ecosistemici alpini non si limita agli effetti sulla disponibilità di acqua potabile. Per ogni grado di aumento della temperatura, il livello della neve si alza di circa 150 metri. Di conseguenza, si accumula meno neve a bassa quota. Quasi la metà delle stazioni sciistiche in Svizzera, e un numero ancora maggiore in Germania, Austria e nei Pirenei, in futuro avranno difficoltà ad attirare turisti e amanti degli sport invernali.
